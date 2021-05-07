@@ -7,12 +7,12 @@ const DEFAULT_TOOLTIP = `Don't believe it? Select a line to see how many syllabl
 
 function App() {
   const [input, setInput] = useState("");
-  const [haiku, setHaiku] = useState("");
+  const [haiku, setHaiku] = useState("You haven't hit 'haikuify' yet!");
   const [tooltip, setTooltip] = useState(DEFAULT_TOOLTIP);
 
   const haikuify = () => {
-    console.log("running");
     setHaiku(paragraphToHaiku(input));
+    document.getElementById('haiku')?.scrollIntoView();
   };
 
   const haikuLines = haiku.split("\n");
@@ -30,11 +30,20 @@ function App() {
       />
 
       <p>{tooltip}</p>
-      <button onClick={haikuify}>Haikuify!</button>
-      <button onClick={() => navigator.clipboard.writeText(haiku)}>Copy to clipboard!</button>
+      <div className="button-group">
+        <button className="button" onClick={haikuify}>
+          Haikuify!
+        </button>
+        <button
+          className="button"
+          onClick={() => navigator.clipboard.writeText(haiku)}
+        >
+          Copy to clipboard!
+        </button>
+      </div>
 
       <h3>Haiku Version</h3>
-      <div className={haikuLines.length > 10 ? "haiku" : ""}>
+      <div id="haiku" className={haikuLines.length > 10 ? "haiku" : ""}>
         {haikuLines.map((line, key) => {
           const count = syllable(line);
           return (
@@ -47,12 +56,20 @@ function App() {
               >
                 {line}
               </p>
-			  {line === "" && <br/>}
+              {line === "" && <br />}
             </div>
           );
         })}
       </div>
-	  <p>Made by <a href="https://ronakshah.net">Ronak Shah</a> (not a web developer)</p>
+      <p>
+        Made by <a href="https://ronakshah.net">Ronak Shah</a> (not a web
+        developer)
+      </p>
+      <p className="help">
+        If you'd like to help out via cleaning this up / making it look nice /
+        fixing bugs or just want to report an issue, checkout the{" "}
+        <a href="https://github.com/trulyronak/haikus/issues">Github</a>
+      </p>
     </div>
   );
 }

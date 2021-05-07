@@ -43,9 +43,40 @@ textarea {
 }
 
 .haiku {
-	column-count: 3;
+  column-count: 3;
 }
 
 a {
-	color: #61dafb
+  color: #61dafb;
+}
+
+.help {
+  font-size: 0.5em;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+/* https://www.fabriziovanmarciano.com/button-styles/ */
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin: 10px;
+}
+
+.button:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
