@@ -15,6 +15,8 @@ function App() {
     setHaiku(paragraphToHaiku(input));
   };
 
+  const haikuLines = haiku.split("\n");
+
   return (
     <div className="App">
       <h1>Anything to Haiku</h1>
@@ -32,8 +34,8 @@ function App() {
       <button onClick={() => navigator.clipboard.writeText(haiku)}>Copy to clipboard!</button>
 
       <h3>Haiku Version</h3>
-      <div className="haiku">
-        {haiku.split("\n").map((line, key) => {
+      <div className={haikuLines.length > 10 ? "haiku" : ""}>
+        {haikuLines.map((line, key) => {
           const count = syllable(line);
           return (
             <div>

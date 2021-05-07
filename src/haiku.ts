@@ -1,21 +1,5 @@
 import { syllable } from "syllable";
 
-// https://stackoverflow.com/a/51175267
-// const syllablesForWord = (word: string): number => {
-//     word = word.toLowerCase();
-//     word = word.replace(/(?:[^laeiouy]|ed|[^laeiouy]e)$/, '');
-//     word = word.replace(/^y/, '');
-//     //return word.match(/[aeiouy]{1,2}/g).length;
-//     var syl = word.match(/[aeiouy]{1,2}/g);
-
-//     if(syl)
-//     {
-//         return syl.length;
-//     } else {
-// 		return 0;
-// 	}
-// }
-
 const ONE_LAST_LINE = "Thank you very much";
 const TWO_MORE_LINES_FIRST = "antidisestablishment";
 const TWO_MORE_LINES_SECOND = "refrigerator";
