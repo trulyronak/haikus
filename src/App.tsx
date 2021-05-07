@@ -50,6 +50,7 @@ function App() {
           );
         })}
       </div>
+	  <p>Made by <a href="https://ronakshah.net">Ronak Shah</a> (not a web developer)</p>
     </div>
   );
 }

@@ -45,3 +45,7 @@ textarea {
 .haiku {
 	column-count: 3;
 }
+
+a {
+	color: #61dafb
+}
